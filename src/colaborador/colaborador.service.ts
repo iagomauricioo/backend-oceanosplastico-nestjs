@@ -13,8 +13,11 @@ export class ColaboradorService {
     private colaboradorRepository: Repository<Colaborador>,
   ) {}
 
-  create(createColaboradorDto: CreateColaboradorDto) {
-    return 'This action adds a new colaborador';
+  async create(
+    createColaboradorDto: CreateColaboradorDto,
+  ): Promise<Colaborador> {
+    const colaborador = this.colaboradorRepository.create(createColaboradorDto);
+    return this.colaboradorRepository.save(colaborador);
   }
 
   findAll(): Promise<Colaborador[]> {

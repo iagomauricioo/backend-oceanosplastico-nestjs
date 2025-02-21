@@ -17,6 +17,7 @@ async function bootstrap() {
   const port = process.env.PORT ?? 3000;
   await app.listen(port);
   console.log(`🚀 Server is running at http://localhost:${port}`);
+  console.log(`🚀 Swagger/OpenAPI http://localhost:${port}/api`);
 }
 bootstrap().catch((error) => {
   console.error('Error during bootstrap:', error);

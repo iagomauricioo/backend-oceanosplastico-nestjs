@@ -103,3 +103,7 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 ```bash
 $ nest start --env-file .env
 ```
+
+## localhost:3000/api
+
+This project contains OpenAPI/Swagger for documentation. Open this link in your browser after start the project.

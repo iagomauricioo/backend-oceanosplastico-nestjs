@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
+import { ColaboradorModule } from './colaborador/colaborador.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { DataSource } from 'typeorm';
       autoLoadEntities: true,
       synchronize: true, // DO NOT USE IN PRODUCTION
     }),
+    ColaboradorModule,
   ],
   controllers: [AppController],
   providers: [AppService],

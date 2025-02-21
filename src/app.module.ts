@@ -6,6 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { ColaboradorModule } from './colaborador/colaborador.module';
 import { Colaborador } from './colaborador/entities/colaborador.entity';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { Colaborador } from './colaborador/entities/colaborador.entity';
       migrationsTableName: 'migrations_typeorm',
     }),
     ColaboradorModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

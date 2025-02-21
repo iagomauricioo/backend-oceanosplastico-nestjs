@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Injectable } from '@nestjs/common';
 import { CreateColaboradorDto } from './dto/create-colaborador.dto';
 import { UpdateColaboradorDto } from './dto/update-colaborador.dto';
@@ -16,7 +15,8 @@ export class ColaboradorService {
   async createMany(
     createColaboradorDto: CreateColaboradorDto[],
   ): Promise<Colaborador[]> {
-    const colaboradores = this.colaboradorRepository.create(createColaboradorDto);
+    const colaboradores =
+      this.colaboradorRepository.create(createColaboradorDto);
     return this.colaboradorRepository.save(colaboradores);
   }
 

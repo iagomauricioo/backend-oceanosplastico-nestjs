@@ -13,11 +13,11 @@ export class ColaboradorService {
     private colaboradorRepository: Repository<Colaborador>,
   ) {}
 
-  async create(
-    createColaboradorDto: CreateColaboradorDto,
-  ): Promise<Colaborador> {
-    const colaborador = this.colaboradorRepository.create(createColaboradorDto);
-    return this.colaboradorRepository.save(colaborador);
+  async createMany(
+    createColaboradorDto: CreateColaboradorDto[],
+  ): Promise<Colaborador[]> {
+    const colaboradores = this.colaboradorRepository.create(createColaboradorDto);
+    return this.colaboradorRepository.save(colaboradores);
   }
 
   findAll(): Promise<Colaborador[]> {

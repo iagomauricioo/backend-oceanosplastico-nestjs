@@ -29,7 +29,7 @@ export class ColaboradorService {
   }
 
   update(id: number, updateColaboradorDto: UpdateColaboradorDto) {
-    return `This action updates a #${id} colaborador`;
+    return this.colaboradorRepository.update(id, updateColaboradorDto);
   }
 
   async remove(id: number): Promise<void> {

@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { ColaboradorModule } from './colaborador/colaborador.module';
+import { Colaborador } from './colaborador/entities/colaborador.entity';
 
 @Module({
   imports: [
@@ -18,6 +19,9 @@ import { ColaboradorModule } from './colaborador/colaborador.module';
       database: process.env.DB_NAME,
       autoLoadEntities: true,
       synchronize: true, // DO NOT USE IN PRODUCTION
+      entities: [Colaborador],
+      migrations: ['dist/migrations/*.js'],
+      migrationsTableName: 'migrations_typeorm',
     }),
     ColaboradorModule,
   ],

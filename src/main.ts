@@ -4,6 +4,11 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors({
+    origin: process.env.URL_CORS ?? 'http://localhost:4200',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  });
   const config = new DocumentBuilder()
     .setTitle('Oceanos de plástico docs')
     .setDescription(

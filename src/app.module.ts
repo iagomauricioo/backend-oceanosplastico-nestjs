@@ -17,7 +17,7 @@ import { UsersModule } from './users/users.module';
       host: process.env.DB_HOST,
       port: parseInt(process.env.DB_PORT || '5432'),
       username: process.env.DB_USER,
-      password: '123456',
+      password: '123',
       database: process.env.DB_NAME,
       autoLoadEntities: true,
       synchronize: true, // DO NOT USE IN PRODUCTION

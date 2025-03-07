@@ -1,34 +1,16 @@
-version: "3.8"
-
 services:
   postgres:
     image: postgres:15
     container_name: db_postgres_nest
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123456
-      POSTGRES_DB: app
+      POSTGRES_USER:
+      POSTGRES_PASSWORD: 
+      POSTGRES_DB:
     ports:
       - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
-
-  app:
-    image: iagomauricioo/nest_oceanos_plastico:v1
-    container_name: nest_app
-    restart: always
-    depends_on:
-      - postgres
-    environment:
-      DB_HOST: postgres
-      DB_USER: postgres
-      DB_PASSWORD: 123456
-      DB_PORT: 5432
-      DB_NAME: app
-    ports:
-      - "3000:3000"
-    command: npm run start
 
 volumes:
   pg_data:

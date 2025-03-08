@@ -37,7 +37,17 @@ jobs:
         run: |
           ssh -o ConnectTimeout=10 -i ~/.ssh/github_actions_rsa bitnami@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
           set -e
+          export SHELL=/bin/bash
           echo "Diretório atual: $(pwd)"
           echo "Node.js versão: $(node -v)"
           echo "NPM versão: $(npm -v)"
           if ! command -v pm2 &> /dev/null; then
+            echo "PM2 não está instalado. Instalando..."
+            npm install -g pm2
+          fi
+          cd ~/nestjs-app || exit 1
+          git pull origin master
+          npm ci
+          npm run build
+          pm2 restart all
+          EOF

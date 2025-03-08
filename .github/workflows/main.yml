@@ -45,7 +45,7 @@ jobs:
             echo "PM2 não está instalado. Instalando..."
             npm install -g pm2
           fi
-          cd ~/nestjs-app || exit 1
+          cd ~/nestjs || exit 1
           git pull origin master
           npm ci
           npm run build

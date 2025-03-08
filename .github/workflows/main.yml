@@ -56,6 +56,6 @@ jobs:
             pm2 restart all
           else
             echo "Nenhum processo PM2 rodando. Iniciando o processo..."
-            pm2 start npm --name "nestjs-app" -- run start:prod
+            pm2 start npm --name "nestjs" -- run start:prod
           fi
           EOF

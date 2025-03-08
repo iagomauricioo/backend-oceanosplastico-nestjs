@@ -26,12 +26,27 @@ jobs:
           chmod 600 ~/.ssh/github_actions_rsa
           ssh-keyscan -H ${{ secrets.LIGHTSAIL_IP }} >> ~/.ssh/known_hosts
 
+      - name: Validar chave SSH
+        run: |
+          if [ ! -s ~/.ssh/github_actions_rsa ]; then
+            echo "Erro: A chave SSH está vazia ou não foi salva corretamente."
+            exit 1
+          fi
+
       - name: Deploy no Lightsail
         run: |
-          ssh -i ~/.ssh/github_actions_rsa -T bitnami@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
-            cd ~/nestjs-app || exit 1
-            git pull origin master
-            npm ci
-            npm run build
-            pm2 restart all
+          ssh -o ConnectTimeout=10 -i ~/.ssh/github_actions_rsa bitnami@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
+          set -e
+          echo "Diretório atual: $(pwd)"
+          echo "Node.js versão: $(node -v)"
+          echo "NPM versão: $(npm -v)"
+          if ! command -v pm2 &> /dev/null; then
+            echo "PM2 não está instalado. Instalando..."
+            npm install -g pm2
+          fi
+          cd ~/nestjs-app || exit 1
+          git pull origin master
+          npm ci
+          npm run build
+          pm2 restart all
           EOF

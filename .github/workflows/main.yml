@@ -41,12 +41,6 @@ jobs:
           echo "Diretório atual: $(pwd)"
           echo "Node.js versão: $(node -v)"
           echo "NPM versão: $(npm -v)"
-          
-          # Verifica se o PM2 está instalado
-          if ! command -v pm2 &> /dev/null; then
-            echo "PM2 não está instalado. Instalando..."
-            npm install -g pm2
-          fi
 
           # Acessa o diretório do projeto
           cd ~/nestjs || { echo "Falha ao acessar o diretório ~/nestjs"; exit 1; }
@@ -60,21 +54,22 @@ jobs:
           # Build do projeto
           npm run build || { echo "Falha ao buildar o projeto"; exit 1; }
 
-          # Verifica se há processos PM2 rodando
-          if pm2 list | grep -q online; then
-            echo "Processos PM2 já estão rodando. Reiniciando..."
-            pm2 restart all || { echo "Falha ao reiniciar os processos PM2"; exit 1; }
-          else
-            echo "Nenhum processo PM2 rodando. Iniciando o processo..."
-            pm2 start npm --name "nestjs" -- run start:prod || { echo "Falha ao iniciar o processo com PM2"; exit 1; }
-          fi
+          # Para o servidor Node.js atual (se estiver rodando)
+          echo "Parando o servidor Node.js atual (se estiver rodando)..."
+          pkill -f "npm run start:prod" || echo "Nenhum processo encontrado para parar."
 
-          # Verifica se o processo está online
-          echo "Verificando status do processo..."
-          if ! pm2 list | grep -q online; then
-            echo "Erro: O processo não está online."
+          # Inicia o servidor Node.js em segundo plano
+          echo "Iniciando o servidor Node.js..."
+          nohup npm run start:prod > app.log 2>&1 &
+
+          # Verifica se o servidor está rodando
+          sleep 5 # Aguarda alguns segundos para o servidor iniciar
+          if ! pgrep -f "npm run start:prod" > /dev/null; then
+            echo "Erro: O servidor Node.js não está rodando."
+            echo "Logs da aplicação:"
+            cat app.log
             exit 1
           else
-            echo "Sucesso: O processo está online."
+            echo "Sucesso: O servidor Node.js está rodando."
           fi
           EOF

@@ -1,38 +1,3 @@
-name: Deploy para AWS Lightsail
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Clonar o código
-        uses: actions/checkout@v3
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Configurar SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.LIGHTSAIL_SSH_KEY }}" > ~/.ssh/github_actions_rsa
-          chmod 600 ~/.ssh/github_actions_rsa
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/github_actions_rsa
-          ssh-keyscan -H ${{ secrets.LIGHTSAIL_IP }} >> ~/.ssh/known_hosts
-
-      - name: Verificar chave SSH
-        run: |
-          echo "Conteúdo da chave SSH:"
-          cat ~/.ssh/github_actions_rsa
-
       - name: Deploy no Lightsail
         run: |
           ssh -o ConnectTimeout=10 -i ~/.ssh/github_actions_rsa bitnami@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
@@ -49,5 +14,13 @@ jobs:
           git pull origin master
           npm ci
           npm run build
-          pm2 restart all
+          
+          # Verifica se há processos PM2 rodando
+          if pm2 list | grep -q online; then
+            echo "Processos PM2 já estão rodando. Reiniciando..."
+            pm2 restart all
+          else
+            echo "Nenhum processo PM2 rodando. Iniciando o processo..."
+            pm2 start npm --name "nestjs-app" -- run start:prod
+          fi
           EOF

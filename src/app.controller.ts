@@ -17,7 +17,7 @@ export class AppController {
         <title>API Oceanos de Plástico</title>
     </head>
     <body>
-        <h1>API do Projeto Oceanos de Plástico!</h1>
+        <h1>API do Projeto Oceanos de Plástico!!</h1>
         <a href="https://api.oceanosdeplastico.com.br/api"><h2>Swagger UI</h2></a>
     </body>
     </html>

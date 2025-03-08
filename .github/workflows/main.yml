@@ -28,10 +28,11 @@ jobs:
 
       - name: Deploy no Lightsail
         run: |
-          ssh -i ~/.ssh/github_actions_rsa ubuntu@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
+          ssh -i ~/.ssh/github_actions_rsa -T ubuntu@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
             cd ~/nestjs-app || exit 1
             git pull origin master
-            npm ci  # Usa o cache do GitHub Actions para ser mais rápido
+            npm ci
             npm run build
             pm2 restart all
           EOF
+

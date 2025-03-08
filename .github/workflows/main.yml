@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy no Lightsail
         run: |
-          ssh -i ~/.ssh/github_actions_rsa -T ubuntu@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
+          ssh -i ~/.ssh/github_actions_rsa -T bitnami@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
             cd ~/nestjs-app || exit 1
             git pull origin master
             npm ci

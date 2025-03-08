@@ -63,7 +63,7 @@ jobs:
           nohup npm run start:prod > app.log 2>&1 &
 
           # Verifica se o servidor está rodando
-          sleep 5 # Aguarda alguns segundos para o servidor iniciar
+          sleep 12 # Aguarda alguns segundos para o servidor iniciar
           if ! pgrep -f "npm run start:prod" > /dev/null; then
             echo "Erro: O servidor Node.js não está rodando."
             echo "Logs da aplicação:"

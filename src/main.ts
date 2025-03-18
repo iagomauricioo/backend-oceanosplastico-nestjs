@@ -5,11 +5,17 @@ import * as basicAuth from 'express-basic-auth';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const user = process.env.SWAGGER_USER
+  const password = process.env.SWAGGER_PASS;
+  
+  if (!password) {
+    throw new Error('SWAGGER_PASS environment variable is not defined');
+  }
 
   app.use(
     ['/api'],
     basicAuth({
-      users: { admin: '1234' }, 
+      users: { user: password }, 
       challenge: true, // Solicita autenticação no navegador
     }),
   );

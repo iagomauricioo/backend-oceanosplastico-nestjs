@@ -6,16 +6,19 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { ColaboradorService } from './colaborador.service';
 import { CreateColaboradorDto } from './dto/create-colaborador.dto';
 import { UpdateColaboradorDto } from './dto/update-colaborador.dto';
 import { ApiBody } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/jwt-auth-guard';
 
 @Controller('colaborador')
 export class ColaboradorController {
-  constructor(private readonly colaboradorService: ColaboradorService) {}
+  constructor(private readonly colaboradorService: ColaboradorService) { }
 
+  @UseGuards(JwtAuthGuard)
   @Post()
   @ApiBody({
     schema: {
@@ -43,11 +46,13 @@ export class ColaboradorController {
     return this.colaboradorService.findAll();
   }
 
+  
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.colaboradorService.findOne(+id);
   }
-
+  
+  @UseGuards(JwtAuthGuard)
   @Patch(':id')
   @ApiBody({
     schema: {
@@ -73,6 +78,7 @@ export class ColaboradorController {
     return this.colaboradorService.update(+id, updateColaboradorDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.colaboradorService.remove(+id);

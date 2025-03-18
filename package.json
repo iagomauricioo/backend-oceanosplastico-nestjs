@@ -29,6 +29,7 @@
     "@nestjs/swagger": "^11.0.4",
     "@nestjs/typeorm": "^11.0.0",
     "dotenv": "^16.4.7",
+    "express-basic-auth": "^1.2.1",
     "pg": "^8.13.3",
     "pm2": "^5.4.3",
     "reflect-metadata": "^0.2.2",

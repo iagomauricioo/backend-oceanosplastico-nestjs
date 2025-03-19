@@ -21,13 +21,17 @@
     "typeorm": "typeorm-ts-node-commonjs"
   },
   "dependencies": {
+    "@nestjs/axios": "^4.0.0",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.0",
     "@nestjs/core": "^11.0.1",
     "@nestjs/jwt": "^11.0.0",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/platform-socket.io": "^11.0.12",
     "@nestjs/swagger": "^11.0.6",
     "@nestjs/typeorm": "^11.0.0",
+    "@nestjs/websockets": "^11.0.12",
+    "axios": "^1.8.3",
     "dotenv": "^16.4.7",
     "express-basic-auth": "^1.2.1",
     "pg": "^8.13.3",

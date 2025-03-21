@@ -16,7 +16,7 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth-guard';
 
 @Controller('colaborador')
 export class ColaboradorController {
-  constructor(private readonly colaboradorService: ColaboradorService) { }
+  constructor(private readonly colaboradorService: ColaboradorService) {}
 
   @UseGuards(JwtAuthGuard)
   @Post()
@@ -46,12 +46,11 @@ export class ColaboradorController {
     return this.colaboradorService.findAll();
   }
 
-  
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.colaboradorService.findOne(+id);
   }
-  
+
   @UseGuards(JwtAuthGuard)
   @Patch(':id')
   @ApiBody({

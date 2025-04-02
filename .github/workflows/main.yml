@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy no Lightsail
         run: |
-          ssh -o ConnectTimeout=10 -i ~/.ssh/github_actions_rsa root@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
+          ssh -t ConnectTimeout=10 -i ~/.ssh/github_actions_rsa root@${{ secrets.LIGHTSAIL_IP }} << 'EOF'
           set -e
           export SHELL=/bin/bash
           echo "Diretório atual: $(pwd)"

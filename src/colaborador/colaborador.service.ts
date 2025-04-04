@@ -3,7 +3,7 @@ import { CreateColaboradorDto } from './dto/create-colaborador.dto';
 import { UpdateColaboradorDto } from './dto/update-colaborador.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Colaborador } from './entities/colaborador.entity';
-import { Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 
 @Injectable()
 export class ColaboradorService {
@@ -30,7 +30,7 @@ export class ColaboradorService {
 
   findByInstituicao(nome: string): Promise<Colaborador[]> {
     return this.colaboradorRepository.find({
-      where: { instituicao: nome },
+      where: { instituicao: ILike(nome) },
       order: { nome: 'ASC' },
     });
   }

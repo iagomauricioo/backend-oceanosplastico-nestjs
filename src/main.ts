@@ -1,17 +1,23 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import * as basicAuth from 'express-basic-auth';
+import { NoCacheMiddleware } from './middleware/no-cache-middleware';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   const user = process.env.SWAGGER_USER;
   const password = process.env.SWAGGER_PASS;
 
   if (!user || !password) {
-    throw new Error('SWAGGER_USER ou SWAGGER_PASS não foram definidos no ambiente');
+    throw new Error(
+      'SWAGGER_USER ou SWAGGER_PASS não foram definidos no ambiente',
+    );
   }
+
+  app.use(new NoCacheMiddleware().use);
 
   app.use(
     ['/api'],

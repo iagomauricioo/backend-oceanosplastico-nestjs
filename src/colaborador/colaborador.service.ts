@@ -20,6 +20,10 @@ export class ColaboradorService {
   ): Promise<Colaborador[]> {
     const colaboradores = await Promise.all(
       createColaboradorDto.map(async (dto) => {
+        if (!dto.instituicoesIds || !dto.instituicoesIds.length) {
+          throw new Error('instituicoesIds está vazio ou indefinido!');
+        }
+
         const instituicoes = await this.instituicaoRepository.findByIds(
           dto.instituicoesIds,
         );

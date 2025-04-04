@@ -19,4 +19,7 @@ export class Colaborador {
 
   @Column({ default: true })
   isActived: boolean;
+
+  @Column({ default: 'LERE' })
+  instituicao: string;
 }

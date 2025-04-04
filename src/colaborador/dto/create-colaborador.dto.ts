@@ -4,5 +4,5 @@ export class CreateColaboradorDto {
   linkedin: string;
   lattes: string;
   isActived: boolean;
-  instituicao: string;
+  instituicoesIds: number[];
 }

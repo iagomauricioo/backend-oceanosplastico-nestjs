@@ -4,19 +4,33 @@ import { UpdateColaboradorDto } from './dto/update-colaborador.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Colaborador } from './entities/colaborador.entity';
 import { ILike, Repository } from 'typeorm';
+import { Instituicao } from 'src/instituicao/entities/instituicao.entity';
 
 @Injectable()
 export class ColaboradorService {
   constructor(
     @InjectRepository(Colaborador)
     private colaboradorRepository: Repository<Colaborador>,
+    @InjectRepository(Instituicao)
+    private instituicaoRepository: Repository<Instituicao>,
   ) {}
 
   async createMany(
     createColaboradorDto: CreateColaboradorDto[],
   ): Promise<Colaborador[]> {
-    const colaboradores =
-      this.colaboradorRepository.create(createColaboradorDto);
+    const colaboradores = await Promise.all(
+      createColaboradorDto.map(async (dto) => {
+        const instituicoes = await this.instituicaoRepository.findByIds(
+          dto.instituicoesIds,
+        );
+
+        return this.colaboradorRepository.create({
+          ...dto,
+          instituicoes,
+        });
+      }),
+    );
+
     return this.colaboradorRepository.save(colaboradores);
   }
 
@@ -30,7 +44,12 @@ export class ColaboradorService {
 
   findByInstituicao(nome: string): Promise<Colaborador[]> {
     return this.colaboradorRepository.find({
-      where: { instituicao: ILike(nome) },
+      relations: ['instituicoes'],
+      where: {
+        instituicoes: {
+          nome: ILike(`%${nome}%`),
+        },
+      },
       order: { nome: 'ASC' },
     });
   }

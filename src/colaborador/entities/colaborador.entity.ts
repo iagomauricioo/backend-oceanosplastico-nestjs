@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Instituicao } from 'src/instituicao/entities/instituicao.entity';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Colaborador {
@@ -20,6 +27,10 @@ export class Colaborador {
   @Column({ default: true })
   isActived: boolean;
 
-  @Column({ default: 'LERE' })
-  instituicao: string;
+  @ManyToMany(() => Instituicao, (instituicao) => instituicao.colaboradores, {
+    cascade: true,
+    eager: true,
+  })
+  @JoinTable()
+  instituicoes: Instituicao[];
 }

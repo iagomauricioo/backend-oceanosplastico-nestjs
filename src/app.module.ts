@@ -9,6 +9,7 @@ import { Colaborador } from './colaborador/entities/colaborador.entity';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ChatbotModule } from './websockets/chatbot.module';
+import { InstituicaoModule } from './instituicao/instituicao.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { ChatbotModule } from './websockets/chatbot.module';
     AuthModule,
     UsersModule,
     ChatbotModule,
+    InstituicaoModule,
   ],
   controllers: [AppController],
   providers: [AppService],

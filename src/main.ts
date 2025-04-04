@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 import * as basicAuth from 'express-basic-auth';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: false });
+  const app = await NestFactory.create(AppModule);
 
   const user = process.env.SWAGGER_USER;
   const password = process.env.SWAGGER_PASS;
@@ -14,6 +14,11 @@ async function bootstrap() {
       'SWAGGER_USER ou SWAGGER_PASS não foram definidos no ambiente',
     );
   }
+
+  app.enableCors({
+    origin: '*',
+    methods: '*',
+  });
 
   app.use(
     ['/api'],

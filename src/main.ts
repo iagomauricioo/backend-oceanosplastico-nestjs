@@ -27,12 +27,6 @@ async function bootstrap() {
     }),
   );
 
-  app.enableCors({
-    origin: 'https://oceanosdeplasticos.com.br',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-  });
-
   // Configuração do Swagger
   const config = new DocumentBuilder()
     .setTitle('Oceanos de Plástico Docs')

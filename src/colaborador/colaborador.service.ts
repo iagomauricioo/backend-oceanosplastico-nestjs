@@ -28,6 +28,13 @@ export class ColaboradorService {
     return this.colaboradorRepository.findOneBy({ id });
   }
 
+  findByInstituicao(nome: string): Promise<Colaborador[]> {
+    return this.colaboradorRepository.find({
+      where: { instituicao: nome },
+      order: { nome: 'ASC' },
+    });
+  }
+
   update(id: number, updateColaboradorDto: UpdateColaboradorDto) {
     return this.colaboradorRepository.update(id, updateColaboradorDto);
   }

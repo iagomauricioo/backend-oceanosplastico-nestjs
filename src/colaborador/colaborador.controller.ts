@@ -46,6 +46,11 @@ export class ColaboradorController {
     return this.colaboradorService.findAll();
   }
 
+  @Get('instituicao/:nome')
+  findByInstituicao(@Param('nome') nome: string) {
+    return this.colaboradorService.findByInstituicao(nome);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.colaboradorService.findOne(+id);

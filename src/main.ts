@@ -28,7 +28,7 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: process.env.URL_CORS ?? 'http://localhost:4200',
+    origin: 'https://oceanosdeplasticos.com.br',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });

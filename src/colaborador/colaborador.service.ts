@@ -39,7 +39,11 @@ export class ColaboradorService {
   }
 
   findAll(): Promise<Colaborador[]> {
-    return this.colaboradorRepository.find();
+    
+    return this.colaboradorRepository.find({
+      order: { nome: 'ASC' },
+      relations: ['instituicoes'],
+    });
   }
 
   findOne(id: number): Promise<Colaborador | null> {

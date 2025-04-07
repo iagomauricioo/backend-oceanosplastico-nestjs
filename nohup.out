@@ -1,0 +1,124 @@
+
+> nest-oceanos-plastico@0.0.1 start
+> nest start
+
+
+> nest-oceanos-plastico@0.0.1 start
+> nest start
+
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +40ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mChatbotModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +77ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mColaboradorModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[WebSocketsController] [39m[32mChatbotGateway subscribed to the "message" message[39m[38;5;3m +27ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mColaboradorController {/colaborador}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mChatbotController {/chatbot}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/chatbot/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 320618  - [39m04/02/2025, 4:41:19 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+🚀 Server is running at http://localhost:8080
+🚀 Swagger/OpenAPI http://localhost:8080/api
+
+> nest-oceanos-plastico@0.0.1 start
+> nest start
+
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +39ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mChatbotModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +82ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mColaboradorModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[WebSocketsController] [39m[32mChatbotGateway subscribed to the "message" message[39m[38;5;3m +27ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +2ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mColaboradorController {/colaborador}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mChatbotController {/chatbot}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/chatbot/ask, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +4ms[39m
+[31m[Nest] 413213  - [39m04/04/2025, 1:32:00 PM [31m  ERROR[39m [38;5;3m[NestApplication] [39m[31mError: listen EADDRINUSE: address already in use 0.0.0.0:8080[39m[38;5;3m +2ms[39m
+Error during bootstrap: Error: listen EADDRINUSE: address already in use 0.0.0.0:8080
+    at Server.setupListenHandle [as _listen2] (node:net:1908:16)
+    at listenInCluster (node:net:1965:12)
+    at doListen (node:net:2139:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 8080
+}
+
+> nest-oceanos-plastico@0.0.1 start
+> nest start
+
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +42ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mUsersModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mHttpModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mInstituicaoModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mChatbotModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmCoreModule dependencies initialized[39m[38;5;3m +81ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mTypeOrmModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mColaboradorModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[WebSocketsController] [39m[32mChatbotGateway subscribed to the "message" message[39m[38;5;3m +35ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mColaboradorController {/colaborador}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/instituicao/:nome, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, PATCH} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/colaborador/:id, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/profile, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mChatbotController {/chatbot}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/chatbot/ask, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mInstituicaoController {/instituicao}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/instituicao, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/instituicao, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/instituicao/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/instituicao/:id, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/instituicao/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 526153  - [39m04/05/2025, 8:12:44 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +5ms[39m
+🚀 Server is running at http://localhost:8080
+🚀 Swagger/OpenAPI http://localhost:8080/api

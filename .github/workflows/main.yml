@@ -39,8 +39,6 @@ jobs:
           set -e
           export SHELL=/bin/bash
           echo "Diretório atual: $(pwd)"
-          echo "Node.js versão: $(node -v)"
-          echo "NPM versão: $(npm -v)"
       
           # Acessa o diretório do projeto
           cd ~/nestjs || { echo "Falha ao acessar o diretório ~/nestjs"; exit 1; }
@@ -48,28 +46,3 @@ jobs:
           # Atualiza o código
           git pull origin master || { echo "Falha ao fazer git pull"; exit 1; }
       
-          # Instala as dependências
-          npm ci || { echo "Falha ao instalar dependências com npm ci"; exit 1; }
-      
-          # Build do projeto
-          npm run build || { echo "Falha ao buildar o projeto"; exit 1; }
-      
-          # Para o servidor Node.js atual (se estiver rodando)
-          echo "Parando o servidor Node.js atual (se estiver rodando)..."
-          pkill -f "npm run start" || echo "Nenhum processo encontrado para parar."
-      
-          # Inicia o servidor Node.js em segundo plano
-          echo "Iniciando o servidor Node.js..."
-          nohup npm run start > app.log 2>&1 &
-      
-          # Verifica se o servidor está rodando
-          sleep 12 # Aguarda alguns segundos para o servidor iniciar
-          if ! pgrep -f "npm run start" > /dev/null; then
-            echo "Erro: O servidor Node.js não está rodando."
-            echo "Logs da aplicação:"
-            cat app.log
-            exit 1
-          else
-            echo "Sucesso: O servidor Node.js está rodando."
-          fi
-          EOF

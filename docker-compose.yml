@@ -1,7 +1,7 @@
 services:
   postgres:
-    image: postgres:15
-    container_name: db_postgres_nest
+    image: postgres:latest
+    container_name: db_oceanosplastico_api
     restart: always
     environment:
       POSTGRES_USER: ${DB_USER}
@@ -12,15 +12,17 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin_nest
+  nest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: iagomauricioo/oceanosdeplastico:latest
+    container_name: oceanosplastico_api
     restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    env_file:
+      - .env
     ports:
-      - "5050:80"
+      - "8080:8080"
     depends_on:
       - postgres
 

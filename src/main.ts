@@ -2,9 +2,16 @@ import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import * as basicAuth from 'express-basic-auth';
+import * as fs from 'fs';
+import * as path from 'path';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const httpsOptions = {
+    key: fs.readFileSync(path.join(__dirname, '..', 'ssl', 'key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, '..', 'ssl', 'cert.pem')),
+  };
+
+  const app = await NestFactory.create(AppModule, { httpsOptions });
 
   const user = process.env.SWAGGER_USER;
   const password = process.env.SWAGGER_PASS;

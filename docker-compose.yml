@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:latest
-    container_name: db_oceanosplastico_api
+    container_name: db_postgres_nest
     restart: always
     environment:
       POSTGRES_USER: ${DB_USER}
